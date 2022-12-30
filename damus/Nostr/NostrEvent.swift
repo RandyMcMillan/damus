@@ -178,7 +178,7 @@ class NostrEvent: Codable, Identifiable, CustomStringConvertible, Equatable {
     }
 
     private func get_referenced_ids(key: String) -> [ReferencedId] {
-        return damus.get_referenced_ids(tags: self.tags, key: key)
+        return vinux.get_referenced_ids(tags: self.tags, key: key)
     }
 
     public func is_root_event() -> Bool {
