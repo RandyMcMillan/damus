@@ -1,11 +1,14 @@
 
 # damus
+#### A twitter-like [nostr][nostr] client for iPhone, iPad and MacOS.
+<HR>
+<center>
 
-A twitter-like [nostr][nostr] client for iPhone, iPad and MacOS.
+<a href="https://apps.apple.com/us/app/damus/id1628663131" rel="damus nostr app" style="width: 50%; height: 50%">![Damus](./ss.png)</a>
 
-<img src="./ss.png" width="50%" height="50%" />
+<a href="https://apps.apple.com/us/app/damus/id1628663131" rel="damus nostr app" style="width: 100%; height: 100%">![Damus](./devtools/App_Store_Badge.svg)</a>
+</center>
 
-[nostr]: https://github.com/fiatjaf/nostr
 
 ## Spec Compliance
 
@@ -22,10 +25,7 @@ damus implements the following [Nostr Implementation Possibilities][nips]
 [nip10]: https://github.com/nostr-protocol/nips/blob/master/10.md
 [nip12]: https://github.com/nostr-protocol/nips/blob/master/12.md
 
-## Getting Started on Damus 
-
-### Damus iOS
-1) Get the Damus app on TestFlight: https://testflight.apple.com/join/CLwjLxWl
+## Getting Started on Damus
 
 #### ⚙️ Settings (gear icon, top right)
 - Relays: You can add more relays to send your notes to by tapping the "+". 
@@ -137,3 +137,5 @@ First contributors:
 ### git log bot
 
 npub1fjtdwclt9lspjy8huu3qklr7eklp5uq90u6yh8mec290pqxraccqlufnas
+
+[nostr]: https://github.com/fiatjaf/nostr
