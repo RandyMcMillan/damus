@@ -235,7 +235,10 @@ struct ProfileView: View {
         .padding(.top, 5)
         .padding(.horizontal)
         .accentColor(Color("DamusWhite"))
+        //.background(colorScheme == .dark ? Color("DamusDarkGrey") : Color("DamusLightGrey"))
+        .background(colorScheme == .dark ? Color.clear : Color.clear)
     }
+
     
     func lnButton(lnurl: String, profile: Profile) -> some View {
         Button(action: {
