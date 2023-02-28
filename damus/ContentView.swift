@@ -129,7 +129,7 @@ struct ContentView: View {
                 Divider()
                     .frame(height: 1)
             }
-            .background(colorScheme == .dark ? Color.black : Color.white)
+            .background(colorScheme == .dark ? Color.clear : Color.white)
         }
     }
     
