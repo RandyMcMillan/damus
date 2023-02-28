@@ -12,7 +12,7 @@ class Theme {
     static func navigationBarColors(background : UIColor?,
        titleColor : UIColor? = nil, tintColor : UIColor? = nil ){
         
-        let navigationAppearance = UINavigationBarAppearance()
+        let navigationAppearance = UINavigationBarAppearance.init(barAppearance: UINavigationBarAppearance())
         navigationAppearance.configureWithOpaqueBackground()
         navigationAppearance.backgroundColor = background ?? .clear
         

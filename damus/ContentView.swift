@@ -119,6 +119,8 @@ struct ContentView: View {
                     }
                 }
             }
+            .background(colorScheme == .dark ? Color.clear : Color.white)
+
         }
         .safeAreaInset(edge: .top, spacing: 0) {
             VStack(spacing: 0) {
@@ -139,6 +141,8 @@ struct ContentView: View {
                 TimelineView(events: home.events, loading: $home.loading, damus: damus, show_friend_icon: false, filter: filter)
             }
         }
+        .background(colorScheme == .dark ? Color.clear : Color.white)
+
     }
     
     func popToRoot() {
@@ -169,6 +173,7 @@ struct ContentView: View {
                 Text(verbatim: "")
             }
         }
+        .background(colorScheme == .dark ? Color.clear : Color.white)
     }
     
     func MainContent(damus: DamusState) -> some View {
@@ -185,6 +190,7 @@ struct ContentView: View {
             switch selected_timeline {
             case .search:
                 SearchHomeView(damus_state: damus_state!, model: SearchHomeModel(damus_state: damus_state!))
+                        .background(colorScheme == .dark ? Color.clear : Color.white)
                 
             case .home:
                 PostingTimelineView
@@ -194,6 +200,7 @@ struct ContentView: View {
                     Divider()
                     NotificationsView(state: damus, notifications: home.notifications)
                 }
+                .background(colorScheme == .dark ? Color.clear : Color.white)
             case .dms:
                 DirectMessagesView(damus_state: damus_state!)
                     .environmentObject(home.dms)
@@ -202,6 +209,7 @@ struct ContentView: View {
                 EmptyView()
             }
         }
+        .background(colorScheme == .dark ? Color.clear : Color.white)
         .navigationBarTitle(selected_timeline == .home ?  NSLocalizedString("Home", comment: "Navigation bar title for Home view where posts and replies appear from those who the user is following.") : NSLocalizedString("Universe 🛸", comment: "Navigation bar title for universal view where posts from all connected relay servers appear."), displayMode: .inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -211,6 +219,7 @@ struct ContentView: View {
             }
         }
         .ignoresSafeArea(.keyboard)
+        .background(colorScheme == .dark ? Color.clear : Color.white)
     }
     
     var MaybeSearchView: some View {
@@ -221,6 +230,7 @@ struct ContentView: View {
                 EmptyView()
             }
         }
+        .background(colorScheme == .dark ? Color.clear : Color.white)
     }
     
     var MaybeThreadView: some View {
@@ -243,6 +253,7 @@ struct ContentView: View {
                 EmptyView()
             }
         }
+        .background(colorScheme == .dark ? Color.clear : Color.white)
     }
     
     func MaybeReportView(target: ReportTarget) -> some View {
@@ -257,6 +268,7 @@ struct ContentView: View {
                 EmptyView()
             }
         }
+        .background(colorScheme == .dark ? Color.clear : Color.white)
     }
     
     var body: some View {
@@ -301,19 +313,23 @@ struct ContentView: View {
                                                 }
                                             }
                                         }
+                                        .background(colorScheme == .dark ? Color.clear : Color.white)
                                     }
                                 }
                         }
                         .tabViewStyle(.page(indexDisplayMode: .never))
+                        .background(colorScheme == .dark ? Color.clear : Color.white)
                     }
                     .overlay(
                         SideMenuView(damus_state: damus, isSidebarVisible: $isSideBarOpened.animation())
+                            .background(colorScheme == .dark ? Color.clear : Color.white)
                     )
                 }
                 .navigationViewStyle(.stack)
-            
+                .background(colorScheme == .dark ? Color.clear : Color.white)
                 TabBar(new_events: $home.new_events, selected: $selected_timeline, isSidebarVisible: $isSideBarOpened, action: switch_timeline)
                     .padding([.bottom], 8)
+                    .background(colorScheme == .dark ? Color.clear : Color.white)
             }
         }
         .onAppear() {
@@ -330,6 +346,7 @@ struct ContentView: View {
                 ReplyView(replying_to: event, damus: damus_state!)
             case .event:
                 EventDetailView()
+                        .background(colorScheme == .dark ? Color.clear : Color.white)
             case .filter:
                 let timeline = selected_timeline ?? .home
                 if #available(iOS 16.0, *) {
