@@ -182,7 +182,7 @@ struct ProfileView: View {
     }
     
     var navbarHeight: CGFloat {
-        return 100.0 - (Theme.safeAreaInsets?.top ?? 0)
+        return 130.0 - (Theme.safeAreaInsets?.top ?? 0)
     }
     
     @ViewBuilder
