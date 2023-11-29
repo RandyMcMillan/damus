@@ -14,8 +14,8 @@ public struct RelayInfo: Codable {
     static let rw = RelayInfo(read: true, write: true)
 }
 
-public struct RelayDescriptor: Codable {
-    public let url: URL
+public struct RelayDescriptor {
+    public let url: RelayURL
     public let info: RelayInfo
 }
 
@@ -52,18 +52,12 @@ class Relay: Identifiable {
     let descriptor: RelayDescriptor
     let connection: RelayConnection
     
-    var last_pong: UInt32
     var flags: Int
     
     init(descriptor: RelayDescriptor, connection: RelayConnection) {
         self.flags = 0
         self.descriptor = descriptor
         self.connection = connection
-        self.last_pong = 0
-    }
-    
-    func mark_broken() {
-        flags |= RelayFlags.broken.rawValue
     }
     
     var is_broken: Bool {
@@ -78,9 +72,8 @@ class Relay: Identifiable {
 
 enum RelayError: Error {
     case RelayAlreadyExists
-    case RelayNotFound
 }
 
-func get_relay_id(_ url: URL) -> String {
-    return url.absoluteString
+func get_relay_id(_ url: RelayURL) -> String {
+    return url.url.absoluteString
 }
